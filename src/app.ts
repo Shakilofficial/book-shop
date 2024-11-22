@@ -1,5 +1,6 @@
 import cors from 'cors';
 import express, { Application, Request, Response } from 'express';
+import { productRoute } from './app/modules/product/product.route';
 
 const app: Application = express();
 
@@ -8,7 +9,7 @@ app.use(cors());
 app.use(express.json());
 
 // API Routes Setup
-// app.use('/api/products', productsRoutes);
+app.use('/api/products', productRoute);
 // app.use('/api/orders', ordersRoutes);
 
 // Health Check Endpoint
