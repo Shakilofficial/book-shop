@@ -1,0 +1,36 @@
+{
+  "name": "book-shop-backend",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "start:prod": "node ./dist/server.js",
+    "dev": "ts-node-dev --respawn --transpile-only src/server.ts",
+    "build": "tsc",
+    "lint": "npx eslint .",
+    "lint:fix": "npx eslint . --fix",
+    "prettier": "prettier --ignore-path .gitignore --write \"./src/**/*.+(js|ts|json)\"",
+    "prettier:fix": "npx prettier --write src",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "TypeScript",
+    "ExpressJS",
+    "Mongoose",
+    "MongoDB",
+    "NodeJS",
+    "Zod",
+    "Bookshop"
+  ],
+  "author": "Md. Shakil Hossain",
+  "license": "ISC",
+  "description": "Express application with TypeScript, integrating MongoDB with Mongoose to manage a Book Store.",
+  "devDependencies": {
+    "@eslint/js": "^9.15.0",
+    "@types/eslint__js": "^8.42.3",
+    "eslint": "^9.15.0",
+    "globals": "^15.12.0",
+    "prettier": "^3.3.3",
+    "typescript": "^5.6.3",
+    "typescript-eslint": "^8.15.0"
+  }
+}
