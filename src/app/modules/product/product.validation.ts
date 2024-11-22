@@ -14,7 +14,7 @@ const productValidationSchema = z.object({
   price: z
     .number()
     .min(0, 'Price must be a positive number')
-    .max(100000, 'Price must not exceed 100,000'),
+    .max(10000, 'Price must not exceed 10,000'),
   category: z.enum([
     'Fiction',
     'Science',
@@ -31,7 +31,7 @@ const productValidationSchema = z.object({
   quantity: z
     .number()
     .min(0, 'Quantity must be a non-negative number')
-    .max(10000, 'Quantity must not exceed 10,000'),
+    .max(1000, 'Quantity must not exceed 1,000'),
   inStock: z.boolean(),
 });
 

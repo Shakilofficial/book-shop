@@ -19,7 +19,14 @@ const getAllProducts = async (searchTerm?: string) => {
   const result = await Product.find(query);
   return result;
 };
+
+const getSingleProduct = async (productId: string) => {
+  const result = await Product.findById(productId);
+  return result;
+};
+
 export const productService = {
   createProduct,
   getAllProducts,
+  getSingleProduct,
 };

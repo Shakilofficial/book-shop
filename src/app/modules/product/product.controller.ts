@@ -38,7 +38,26 @@ const getAllProducts = async (req: Request, res: Response) => {
   }
 };
 
+const getSingleProduct = async (req: Request, res: Response) => {
+  try {
+    const { productId } = req.params;
+    const result = await productService.getSingleProduct(productId as string);
+    res.status(200).json({
+      message: 'Book retrieved successfully',
+      success: true,
+      data: result,
+    });
+  } catch (error) {
+    res.status(400).json({
+      message: 'Failed to retrieve book',
+      success: false,
+      error,
+    });
+  }
+};
+
 export const productController = {
   createProduct,
   getAllProducts,
+  getSingleProduct,
 };
