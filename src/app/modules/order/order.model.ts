@@ -1,6 +1,7 @@
 import { model, Schema } from 'mongoose';
 import { IOrder } from './order.interface';
 
+//Define the order schema
 const orderSchema = new Schema<IOrder>(
   {
     email: {
@@ -9,7 +10,7 @@ const orderSchema = new Schema<IOrder>(
       trim: true,
     },
     product: {
-      type: Schema.Types.ObjectId,
+      type: String,
       ref: 'Product',
       required: true,
     },
