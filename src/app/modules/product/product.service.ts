@@ -25,8 +25,20 @@ const getSingleProduct = async (productId: string) => {
   return result;
 };
 
+const updateProduct = async (productId: string, payload: Partial<IProduct>) => {
+  const result = await Product.findByIdAndUpdate(
+    productId,
+    { $set: payload },
+    {
+      new: true,
+    },
+  );
+  return result;
+};
+
 export const productService = {
   createProduct,
   getAllProducts,
   getSingleProduct,
+  updateProduct,
 };

@@ -19,7 +19,6 @@ const productValidationSchema = z.object({
     'Fiction',
     'Science',
     'SelfDevelopment',
-    'Non-Fiction',
     'Poetry',
     'Religious',
   ]),

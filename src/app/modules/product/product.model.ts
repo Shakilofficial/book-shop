@@ -18,14 +18,7 @@ const productSchema = new Schema(
     },
     category: {
       type: String,
-      enum: [
-        'Fiction',
-        'Science',
-        'SelfDevelopment',
-        'Non-Fiction',
-        'Poetry',
-        'Religious',
-      ],
+      enum: ['Fiction', 'Science', 'SelfDevelopment', 'Poetry', 'Religious'],
       required: true,
     },
     description: {

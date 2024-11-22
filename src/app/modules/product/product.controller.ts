@@ -56,8 +56,31 @@ const getSingleProduct = async (req: Request, res: Response) => {
   }
 };
 
+const updateProduct = async (req: Request, res: Response) => {
+  try {
+    const { productId } = req.params;
+    const parsedData = productValidationSchema.partial().parse(req.body);
+    const result = await productService.updateProduct(
+      productId as string,
+      parsedData,
+    );
+    res.status(200).json({
+      message: 'Book updated successfully',
+      success: true,
+      data: result,
+    });
+  } catch (error) {
+    res.status(400).json({
+      message: 'Failed to update book',
+      success: false,
+      error,
+    });
+  }
+};
+
 export const productController = {
   createProduct,
   getAllProducts,
   getSingleProduct,
+  updateProduct,
 };
