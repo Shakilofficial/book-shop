@@ -1,4 +1,4 @@
-![Assignment-2](https://res.cloudinary.com/dcyupktj6/image/upload/v1732318077/nwoqklwqsdc6n8ntiarf.png)
+![Book Shop](https://res.cloudinary.com/dcyupktj6/image/upload/v1732318077/nwoqklwqsdc6n8ntiarf.png)
 
 ---
 
