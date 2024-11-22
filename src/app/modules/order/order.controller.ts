@@ -27,6 +27,24 @@ const createOrder = async (req: Request, res: Response) => {
   }
 };
 
+const calculateRevenue = async (req: Request, res: Response) => {
+  try {
+    const totalRevenue = await orderService.calculateRevenue();
+    res.status(200).json({
+      message: 'Revenue calculated successfully',
+      success: true,
+      data: { totalRevenue },
+    });
+  } catch (error: any) {
+    res.status(400).json({
+      message: error.message || 'Failed to calculate revenue',
+      success: false,
+      error,
+    });
+  }
+};
+
 export const orderController = {
   createOrder,
+  calculateRevenue,
 };
