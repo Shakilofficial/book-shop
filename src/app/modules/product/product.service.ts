@@ -21,19 +21,17 @@ const getAllProducts = async (searchTerm?: string) => {
 };
 
 const getSingleProduct = async (productId: string) => {
-  const result = await Product.findById(productId);
+  const result = await Product.getSingleProduct(productId);
   return result;
 };
 
 const updateProduct = async (productId: string, payload: Partial<IProduct>) => {
-  const result = await Product.findByIdAndUpdate(
-    productId,
-    { $set: payload },
-    {
-      new: true,
-    },
-  );
+  const result = await Product.updateProduct(productId, payload);
   return result;
+};
+
+const deleteProduct = async (productId: string) => {
+  await Product.deleteProduct(productId);
 };
 
 export const productService = {
@@ -41,4 +39,5 @@ export const productService = {
   getAllProducts,
   getSingleProduct,
   updateProduct,
+  deleteProduct,
 };
