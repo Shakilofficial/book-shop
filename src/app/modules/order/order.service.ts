@@ -63,5 +63,5 @@ const calculateRevenue = async () => {
 export const orderService = {
   createOrder,
   calculateRevenue,
-  getAllOrders
+  getAllOrders,
 };
