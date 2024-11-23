@@ -35,25 +35,22 @@ const createOrder = async (payload: IOrder) => {
   return order;
 };
 
+//Get all orders
+const getAllOrders = async () => {
+  //Find all orders
+  const orders = await Order.find();
+  //Return the orders
+  return orders;
+};
+
 //Function to calculate the revenue of all orders
 const calculateRevenue = async () => {
   //Aggregate the orders and calculate the total revenue
   const revenue = await Order.aggregate([
     {
-      //Join with the product collection to get the product details
-      $lookup: {
-        from: 'products',
-        localField: 'product',
-        foreignField: '_id',
-        as: 'product',
-      },
-    },
-    // $unwind the product array to work with each product
-    { $unwind: '$product' },
-    {
       //Project the total revenue for each order
       $project: {
-        totalRevenue: { $multiply: ['$quantity', '$product.price'] },
+        totalRevenue: { $multiply: ['$quantity', '$totalPrice'] },
       },
     },
     //Group the orders by null and calculate the sum of total revenue
@@ -66,4 +63,5 @@ const calculateRevenue = async () => {
 export const orderService = {
   createOrder,
   calculateRevenue,
+  getAllOrders
 };

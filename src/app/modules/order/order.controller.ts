@@ -34,6 +34,28 @@ const createOrder = async (req: Request, res: Response) => {
   }
 };
 
+//Controller function to get all orders
+const getAllOrders = async (req: Request, res: Response) => {
+  try {
+    //Get all orders using the order service
+    const orders = await orderService.getAllOrders();
+
+    //Send a response with the orders data
+    res.status(200).json({
+      message: 'Orders retrieved successfully',
+      success: true,
+      data: orders,
+    });
+  } catch (error: any) {
+    //Handle errors during order retrieval
+    res.status(400).json({
+      message: error.message || 'Failed to retrieve orders',
+      success: false,
+      error,
+    });
+  }
+};
+
 //Controller function to calculate the revenue of all orders
 const calculateRevenue = async (req: Request, res: Response) => {
   try {
@@ -59,4 +81,5 @@ const calculateRevenue = async (req: Request, res: Response) => {
 export const orderController = {
   createOrder,
   calculateRevenue,
+  getAllOrders,
 };
