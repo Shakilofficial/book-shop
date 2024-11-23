@@ -92,6 +92,7 @@ npm run start:prod
 - **Update a Book:** `PUT /api/products/:productId`
 - **Delete a Book:** `DELETE /api/products/:productId`
 - **Order a Book:** `POST /api/orders`
+- **Get All Orders:** `GET /api/orders`
 - **Calculate Revenue:** `GET /api/orders/revenue`
 
 ### Example Requests
