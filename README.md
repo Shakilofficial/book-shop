@@ -84,16 +84,18 @@ To start the server in production mode, run:
 npm run start:prod
 ```
 
-### API Endpoints
+## API Endpoints
 
-- **Create a Book:** `POST /api/products`
-- **Get All Books:** `GET /api/products`
-- **Get a Specific Book:** `GET /api/products/:productId`
-- **Update a Book:** `PUT /api/products/:productId`
-- **Delete a Book:** `DELETE /api/products/:productId`
-- **Order a Book:** `POST /api/orders`
-- **Get All Orders:** `GET /api/orders`
-- **Calculate Revenue:** `GET /api/orders/revenue`
+| Method | Endpoint                   | Description                                   |
+| ------ | -------------------------- | --------------------------------------------- |
+| POST   | `/api/products`            | Create a new book                             |
+| GET    | `/api/products`            | Retrieve all books                            |
+| GET    | `/api/products/:productId` | Retrieve details of a specific book by ID     |
+| PUT    | `/api/products/:productId` | Update details of a specific book by ID       |
+| DELETE | `/api/products/:productId` | Delete a specific book by ID                  |
+| POST   | `/api/orders`              | Place an order for a book                     |
+| GET    | `/api/orders`              | Retrieve all orders                           |
+| GET    | `/api/orders/revenue`      | Calculate total revenue from completed orders |
 
 ### Example Requests
 
@@ -164,6 +166,18 @@ The application provides detailed error responses for validation failures and ot
     }
   },
 ```
+
+---
+
+## Contact
+
+For questions or collaboration, please contact me via:
+
+- **Email**: [mrshakilhossain@outlook.com](mailto:mrshakilhossain@outlook.com)
+- **LinkedIn**: [https://www.linkedin.com/in/your-profile](https://www.linkedin.com/in/your-profile)
+
+- **Facebook**: [https://www.facebook.com/iamshakilhossain](https://www.facebook.com/iamshakilhossain)
+- **Portfolio**: [https://shakilhossain-sigma.vercel.app](https://shakilhossain-sigma.vercel.app)
 
 ---
 
